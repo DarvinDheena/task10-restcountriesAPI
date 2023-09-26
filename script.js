@@ -5,10 +5,8 @@ async function getCountryDetails (countryName){
     try{
         let respose = await fetch(`https://restcountries.com/v3.1/name/${countryName}`)
         let data = await respose.json();
-        console.log(data);
         let commonName = data[1].name.common ;
-        console.log(commonName);
-        let countryCapital = data[1].capital[0] ;
+        let countryCapital = data[1].capital ;
         let area = data[1].area;
         let population = data[1].population;
         let lattitude = data[1].latlng[0];
